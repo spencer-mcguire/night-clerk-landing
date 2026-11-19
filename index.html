@@ -56,9 +56,25 @@
     position:absolute;z-index:2;
     left:6%;top:30%;
     width:min(44%,620px);
-    filter:drop-shadow(0 22px 30px rgba(29,16,10,.38));
   }
-  .plaque img{display:block;width:100%;height:auto}
+  /* Light mask on the door behind the lockup, so the dark crow reads */
+  .plaque::before{
+    content:"";position:absolute;inset:-16% -13% -12%;
+    background:radial-gradient(ellipse 62% 58% at 50% 46%,
+      rgba(255,226,155,.88) 0%,
+      rgba(255,205,105,.55) 42%,
+      rgba(247,193,78,.20) 64%,
+      transparent 76%);
+    filter:blur(14px);
+    z-index:-1;
+  }
+  .plaque img{
+    display:block;width:100%;height:auto;
+    filter:
+      drop-shadow(0 18px 22px rgba(29,16,10,.45))
+      drop-shadow(0 0 3px rgba(255,238,196,.75))
+      drop-shadow(0 0 14px rgba(255,214,120,.35));
+  }
 
   /* ---------- Socials / footer dock ---------- */
   .dock{
