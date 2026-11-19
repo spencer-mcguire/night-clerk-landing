@@ -30,7 +30,7 @@ Visitors land from social posts, word of mouth, search, or a shared link, mostly
 
 - Single splash page: logo, "Coming Soon", and social/contact links. No email capture form (user declined a form for launch).
 - No product names, models, calibers, specs, pricing, dates, dealers, or certifications are confirmed — future work must not invent them.
-- Social/contact destinations (handles, URLs, email address) are not yet provided; links ship as clearly replaceable placeholders until the user supplies the real ones.
+- Social/contact destinations (confirmed 2026-11-19): Instagram [@nightclerkcans](https://www.instagram.com/nightclerkcans); email spencer@nightclerkcans.com. No X/Twitter account — do not add one.
 - Static hosting only; no backend, no form handler, no analytics requirement yet.
 
 ## Brand Commitments
