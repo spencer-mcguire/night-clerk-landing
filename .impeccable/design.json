@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T17:30:00Z",
+  "title": "Design System: Night Clerk Cans",
+  "extensions": {
+    "colorMeta": {
+      "brown-950": {
+        "role": "primary",
+        "displayName": "Deep Door Brown",
+        "canonical": "#1d100a",
+        "tonalRamp": [
+          "oklch(12% 0.03 50)",
+          "oklch(18% 0.04 50)",
+          "oklch(28% 0.05 52)",
+          "oklch(40% 0.06 55)",
+          "oklch(54% 0.06 58)",
+          "oklch(68% 0.05 62)",
+          "oklch(82% 0.04 68)",
+          "oklch(93% 0.02 75)"
+        ]
+      },
+      "brown-900": {
+        "role": "primary",
+        "displayName": "Sign Brown",
+        "canonical": "#2b1a12",
+        "tonalRamp": [
+          "oklch(14% 0.035 50)",
+          "oklch(21% 0.045 50)",
+          "oklch(31% 0.055 52)",
+          "oklch(43% 0.06 55)",
+          "oklch(56% 0.06 58)",
+          "oklch(69% 0.05 62)",
+          "oklch(83% 0.04 68)",
+          "oklch(94% 0.02 75)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Plaque Cream",
+        "canonical": "#f7ead0",
+        "tonalRamp": [
+          "oklch(30% 0.04 75)",
+          "oklch(42% 0.05 78)",
+          "oklch(54% 0.06 80)",
+          "oklch(66% 0.06 82)",
+          "oklch(76% 0.055 83)",
+          "oklch(84% 0.05 84)",
+          "oklch(90% 0.04 85)",
+          "oklch(95% 0.03 86)"
+        ]
+      },
+      "mustard": {
+        "role": "secondary",
+        "displayName": "Mustard",
+        "canonical": "#f2c14e",
+        "tonalRamp": [
+          "oklch(30% 0.07 75)",
+          "oklch(42% 0.10 78)",
+          "oklch(54% 0.13 80)",
+          "oklch(64% 0.15 82)",
+          "oklch(72% 0.155 84)",
+          "oklch(80% 0.13 86)",
+          "oklch(87% 0.09 88)",
+          "oklch(93% 0.05 90)"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Clerk Red",
+        "canonical": "#c1272d",
+        "tonalRamp": [
+          "oklch(22% 0.09 25)",
+          "oklch(30% 0.12 26)",
+          "oklch(38% 0.15 27)",
+          "oklch(46% 0.17 27)",
+          "oklch(55% 0.16 28)",
+          "oklch(66% 0.12 30)",
+          "oklch(78% 0.08 32)",
+          "oklch(90% 0.04 35)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inherited page base (Archivo 500, cream on brown-950). No visible paragraph ships in it yet."
+      },
+      "social-pill": {
+        "displayName": "Social Pill Label",
+        "purpose": "Only call-to-action text: Instagram / X / Email pill labels, Archivo 700."
+      },
+      "fineprint": {
+        "displayName": "Fineprint",
+        "purpose": "Spaced-caps uppercase copyright line under the dock, Archivo 600, 0.18em tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "plaque-drop",
+        "value": "drop-shadow(0 22px 30px rgba(29, 16, 10, 0.38))",
+        "purpose": "Filter drop-shadow seating the logo plaque on the door plate, following the lockup silhouette."
+      },
+      {
+        "name": "pill-lift",
+        "value": "0 10px 24px rgba(29, 16, 10, 0.30)",
+        "purpose": "Lifts social pills off the photographic plate."
+      },
+      {
+        "name": "fineprint-scrim",
+        "value": "0 1px 10px rgba(29, 16, 10, 0.9), 0 0 22px rgba(29, 16, 10, 0.65)",
+        "purpose": "Text-shadow legibility scrim for fineprint over photography; not elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "spill",
+        "value": "spill 5.5s ease-in-out infinite; keyframes opacity 0.65 (0%/100%), 1 (48%), 0.78 (52%), 0.95 (56%)",
+        "purpose": "Warm light breathing over the plate's lit edge via .door::after radial-gradient(50% 65% at 91% 42%, rgba(255,205,105,0.18), transparent 62%). Disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "pill-state",
+        "value": "background 0.18s ease, transform 0.18s ease, border-color 0.18s ease; hover translateY(-1px)",
+        "purpose": "Social pill hover response. Disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "820px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Social Pill",
+      "kind": "button",
+      "refersTo": "social-pill",
+      "description": "Cream-outlined translucent brown pill with inline SVG icon and one-word label; the page's only interactive component.",
+      "html": "<a class=\"ds-social-pill\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2.5\" y=\"2.5\" width=\"19\" height=\"19\" rx=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><circle cx=\"17.4\" cy=\"6.6\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\"/></svg>Instagram</a>",
+      "css": ".ds-social-pill { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 10px 16px; border-radius: 999px; border: 1.5px solid rgba(247,234,208,0.34); background: rgba(29,16,10,0.82); color: #f7ead0; text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.02em; box-shadow: 0 10px 24px rgba(29,16,10,0.30); transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease; } .ds-social-pill svg { width: 19px; height: 19px; flex: none; } .ds-social-pill:hover { background: rgba(43,26,18,0.96); border-color: rgba(242,193,78,0.8); transform: translateY(-1px); } .ds-social-pill:focus-visible { outline: 3px solid #f2c14e; outline-offset: 3px; border-radius: 999px; }"
+    },
+    {
+      "name": "Social Pill Dock",
+      "kind": "nav",
+      "description": "Bottom-center dock: wrapping centered pill row above the spaced-caps fineprint.",
+      "html": "<div class=\"ds-dock\"><nav class=\"ds-dock-row\" aria-label=\"Follow Night Clerk Cans\"><a class=\"ds-dock-pill\" href=\"#\">Instagram</a><a class=\"ds-dock-pill\" href=\"#\">X</a><a class=\"ds-dock-pill\" href=\"mailto:\">Email</a></nav><p class=\"ds-dock-fineprint\">&copy; 2026 Night Clerk Cans</p></div>",
+      "css": ".ds-dock { display: flex; flex-direction: column; align-items: center; gap: 11px; width: max-content; max-width: calc(100vw - 28px); font-family: Archivo, system-ui, sans-serif; } .ds-dock-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; } .ds-dock-pill { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; border: 1.5px solid rgba(247,234,208,0.34); background: rgba(29,16,10,0.82); color: #f7ead0; text-decoration: none; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.02em; box-shadow: 0 10px 24px rgba(29,16,10,0.30); transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease; } .ds-dock-pill:hover { background: rgba(43,26,18,0.96); border-color: rgba(242,193,78,0.8); transform: translateY(-1px); } .ds-dock-pill:focus-visible { outline: 3px solid #f2c14e; outline-offset: 3px; } .ds-dock-fineprint { margin: 0; color: #f7ead0; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-shadow: 0 1px 10px rgba(29,16,10,0.9), 0 0 22px rgba(29,16,10,0.65); text-align: center; }"
+    },
+    {
+      "name": "Logo Plaque",
+      "kind": "custom",
+      "description": "Real supplied logo lockup mounted on the door plate; desktop left/top placement. Artwork is binding and never redrawn (image src omitted here as a local asset).",
+      "html": "<div class=\"ds-plaque\"><span class=\"ds-plaque-note\">Night Clerk Cans logo lockup (assets/nightclerk-logo-lockup.png, 1024x635)</span></div>",
+      "css": ".ds-plaque { width: min(44%, 620px); filter: drop-shadow(0 22px 30px rgba(29,16,10,0.38)); background: #2b1a12; color: #f7ead0; font-family: Archivo, system-ui, sans-serif; padding: 24px; } .ds-plaque-note { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; } @media (max-width: 820px) { .ds-plaque { width: min(76vw, 340px); } }"
+    },
+    {
+      "name": "Door Plate with Spill",
+      "kind": "custom",
+      "description": "Full-bleed photographic door section (min-height 100dvh) with the animated warm spill overlay; brown-950 fallback ground.",
+      "html": "<main class=\"ds-door\"><p class=\"ds-door-note\">Full-bleed door plate; mobile crop swaps at 820px</p></main>",
+      "css": ".ds-door { position: relative; min-height: 100dvh; overflow: hidden; isolation: isolate; background: #1d100a; color: #f7ead0; font-family: Archivo, system-ui, sans-serif; } .ds-door::after { content: \"\"; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(50% 65% at 91% 42%, rgba(255,205,105,0.18), transparent 62%); animation: ds-spill 5.5s ease-in-out infinite; } @keyframes ds-spill { 0%,100% { opacity: 0.65; } 48% { opacity: 1; } 52% { opacity: 0.78; } 56% { opacity: 0.95; } } .ds-door-note { position: relative; z-index: 2; padding: 24px; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; } @media (prefers-reduced-motion: reduce) { .ds-door::after { animation: none; } }"
+    },
+    {
+      "name": "Fineprint",
+      "kind": "custom",
+      "description": "Spaced-caps cream copyright line legible over photography via brown text-shadow scrim.",
+      "html": "<p class=\"ds-fineprint\">&copy; 2026 Night Clerk Cans</p>",
+      "css": ".ds-fineprint { margin: 0; color: #f7ead0; font-family: Archivo, system-ui, sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-shadow: 0 1px 10px rgba(29,16,10,0.9), 0 0 22px rgba(29,16,10,0.65); text-align: center; background: #1d100a; padding: 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Staffed Door",
+    "overview": "The shipped page is not a centered logo on a solid ground. It is a full-bleed photographic motel door, ajar with warm light spilling out, covering the whole first viewport (min-height: 100dvh). The supplied logo lockup is mounted on that door as its plaque, and a single pill dock sits bottom-center. Nothing else competes: no headline in web type, no card, no form. Archivo carries all live web type, in medium through bold, over a five-color palette lifted from the logo itself. Text is scarce by design; the mark and the plate do the talking.",
+    "keyCharacteristics": [
+      "Full-bleed door plate (object-fit: cover, centered) as the only background; brown-950 is the fallback ground behind it",
+      "Real logo lockup as plaque \u2014 never redrawn, never typeset as a substitute",
+      "One component family: cream-outlined social pills on translucent dark brown, docked bottom-center with a spaced-caps fineprint line",
+      "Mustard is an accent of response (focus ring, hover border), red an accent of selection \u2014 neither floods a surface",
+      "One slow warm-light \"spill\" animation over the plate's lit edge; everything else moves only on hover"
+    ],
+    "rules": [
+      {
+        "name": "The Five-Color Rule",
+        "body": "Live CSS uses only brown-950, brown-900, cream, mustard, and red, plus alpha variants of them and one warm spill glow (rgba(255, 205, 105, 0.18)). A new surface introduces no new hue; it reuses these or an alpha of them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Scarce Accent Rule",
+        "body": "Mustard and red appear only as response or inside supplied artwork \u2014 focus, hover border, selection. Neither is ever a background fill for a live surface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Imagery-Carries-Display Rule",
+        "body": "No webfont headline is set on this page. If a future surface needs display type, it must be decided and documented then \u2014 this system does not canonize the plate's or logo's lettering as a type token.",
+        "section": "typography"
+      },
+      {
+        "name": "The Brown Shadow Rule",
+        "body": "Every shadow, drop-shadow, and text-shadow is brown-950 at an alpha. Never black, never gray, never a colored glow \u2014 except the spill, which is light, not shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Spill Rule",
+        "body": "One radial warm glow (50% 65% at 91% 42%, rgba(255, 205, 105, 0.18) fading to transparent at 62%) breathes over the plate's lit edge on a 5.5s ease-in-out infinite loop. It is the page's only ambient motion and the first thing reduced-motion removes.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build first viewports as a full-bleed plate with the real logo mounted on it \u2014 plaque at left: 6% / top: 30% / min(44%, 620px) desktop, centered top: 7% / min(76vw, 340px) at \u2264820px.",
+      "Do reuse the five tokens and their alphas only (brown-950, brown-900, cream, mustard, red); keep mustard to focus/hover response and red to selection and artwork.",
+      "Do set live type in Archivo 500\u2013700, cream on brown, with weight, case, and letter-spacing doing the separation work.",
+      "Do keep touch targets at 44px minimum height and the focus state as the 3px mustard outline at 3px offset.",
+      "Do honor prefers-reduced-motion: kill the spill animation and pill transitions, exactly as shipped.",
+      "Do derive every shadow from brown-950 at an alpha."
+    ],
+    "donts": [
+      "Don't redraw, re-typeset, or substitute the logo lockup, and don't float it on a solid-color panel or card.",
+      "Don't add a centered-logo-on-solid splash, a headline in web type, or any component family beyond the pill without documenting a system change here first.",
+      "Don't introduce gray, pure black/white, or a sixth hue for UI chrome.",
+      "Don't remove or restyle the mustard focus outline, and don't animate anything ambient besides the single spill \u2014 and never under reduced motion.",
+      "Don't ship placeholder social destinations (href=\"#\", empty mailto:) as if they were final; they are owner-replaceable stubs, not a design decision."
+    ]
+  }
+}
